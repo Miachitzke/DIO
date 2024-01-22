@@ -19,7 +19,7 @@ volumeSlider.addEventListener("input", volumeSwitch);
 const playTune = (key) => {
   if (key === "metronome") {
     // src = "http://soundbible.com/grab.php?id=1705&type=mp3"; (som alternativo para metronomo)
-    const metronome = new Audio(`../src/audios/tick.mp3`);
+    const metronome = new Audio(`src/audios/tick.mp3`);
     metronome.volume = volume;
     metronome.play();
 

@@ -35,11 +35,11 @@ mute.addEventListener("click", () => {
   if (mutado) {
     mute.classList.remove("muted");
     mute.classList.add("unmuted");
-    mute.style.background = "./src/img/muted.png";
+    mute.style.background = "src/img/muted.png";
   } else {
     mute.classList.remove("unmuted");
     mute.classList.add("muted");
-    mute.style.background = "./src/img/unmuted.png";
+    mute.style.background = "src/img/unmuted.png";
   }
   mutado = !mutado;
 });
@@ -64,7 +64,7 @@ function flipCard() {
 }
 
 function soundEffect(som) {
-  var audio = new Audio(`../src/sounds/${som}.mp3`);
+  var audio = new Audio(`src/sounds/${som}.mp3`);
   audio.muted = mutado;
   audio.play();
 }

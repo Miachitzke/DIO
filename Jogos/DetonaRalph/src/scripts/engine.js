@@ -62,7 +62,7 @@ function theFinalCountdown() {
 }
 
 function soundEffect(som) {
-  var audio = new Audio(`../src/audios/${som}.mp3`);
+  var audio = new Audio(`src/audios/${som}.mp3`);
   audio.volume = som == "hit" || "missHit" ? 0.2 : 1;
   audio.play();
 }
