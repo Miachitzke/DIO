@@ -1,24 +1,27 @@
 const games = document.querySelectorAll(".game");
+const renderGameContainer = document.getElementById("render-game");
+const painel = document.getElementById("painel");
 
 games.forEach((game) => {
   game.addEventListener("click", () => {
     const gameId = game.id;
 
-    switch (gameId) {
-      case "detona-ralph":
-        window.location.href = "../Jogos/DetonaRalph/index.html";
-        break;
-      case "jogo-memoria":
-        window.location.href = "../Jogos/JogoDaMemoria/index.html";
-        break;
-      case "jokenpo":
-        window.location.href = "../Jogos/Jokenpô - Yu-Gi/index.html";
-        break;
-      case "simulador-piano":
-        window.location.href = "../Jogos/SimuladorPiano/index.html";
-        break;
-      default:
-        break;
-    }
+    const iframe = document.createElement("iframe");
+    iframe.src = `../Jogos/${gameId}/index.html`;
+    iframe.style.width = "100vw";
+    iframe.style.height = "100vh";
+    iframe.style.border = "none";
+
+    renderGameContainer.innerHTML = "";
+    painel.style.display = "none";
+    renderGameContainer.appendChild(iframe);
+
+    const backButton = document.createElement("button");
+    backButton.textContent = "Voltar";
+    backButton.addEventListener("click", () => {
+      window.location.reload();
+    });
+
+    renderGameContainer.appendChild(backButton);
   });
 });
